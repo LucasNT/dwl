@@ -865,8 +865,10 @@ commitnotify(struct wl_listener *listener, void *data)
 		 * a wrong monitor.
 		 */
 		applyrules(c);
-		wlr_surface_set_preferred_buffer_scale(client_surface(c), (int)ceilf(c->mon->wlr_output->scale));
-		wlr_fractional_scale_v1_notify_scale(client_surface(c), c->mon->wlr_output->scale);
+		if (c->mon) {
+			wlr_surface_set_preferred_buffer_scale(client_surface(c), (int)ceilf(c->mon->wlr_output->scale));
+			wlr_fractional_scale_v1_notify_scale(client_surface(c), c->mon->wlr_output->scale);
+		}
 		setmon(c, NULL, 0); /* Make sure to reapply rules in mapnotify() */
 
 		wlr_xdg_toplevel_set_wm_capabilities(c->surface.xdg->toplevel, WLR_XDG_TOPLEVEL_WM_CAPABILITIES_FULLSCREEN);
@@ -1239,7 +1241,6 @@ void
 destroydecoration(struct wl_listener *listener, void *data)
 {
 	Client *c = wl_container_of(listener, c, destroy_decoration);
-	c->decoration = NULL;
 
 	wl_list_remove(&c->destroy_decoration.link);
 	wl_list_remove(&c->set_decoration_mode.link);
@@ -3381,7 +3382,7 @@ sethints(struct wl_listener *listener, void *data)
 {
 	Client *c = wl_container_of(listener, c, set_hints);
 	struct wlr_surface *surface = client_surface(c);
-	if (c == focustop(selmon))
+	if (c == focustop(selmon) || !c->surface.xwayland->hints)
 		return;
 
 	c->isurgent = xcb_icccm_wm_hints_get_urgency(c->surface.xwayland->hints);
