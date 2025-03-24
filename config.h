@@ -54,11 +54,11 @@ static const Layout layouts[] = {
 static const MonitorRule monrules[] = {
 	/* name       mfact  nmaster scale layout       rotate/reflect                x    y */
     // example of a HiDPI laptop monitor:
-	{ "HDMI1",    0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   0,  0 },
-	{ "HDMI-A-1",    0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   0,  0 },
-	{ "eDP-1",    0.5,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   0,  900 },
+	{ "HDMI1",    0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   0,  0    },
+	{ "HDMI-A-2", 0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   0,  0    },
+	{ "eDP-1",    0.5f,  1,      1.2f, &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   0,  1080 },
 	/* defaults */
-	{ NULL,       0.55f, 1,      1.2f,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ NULL,       0.55f, 1,      1.2f, &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1  },
 };
 
 /* keyboard */
