@@ -16,5 +16,6 @@ pkgs.mkShell {
     wayland-scanner
     xorg.xcbutilwm
     pixman
+    clang
   ];
 }
