@@ -25,6 +25,7 @@ static const char *const autostart[] = {
         //"wbg", "/path/to/your/image", NULL,
         "eww", "open", "taskbar", NULL,
         "hypridle", NULL,
+        "dbus-update-activation-environment", "WAYLAND_DISPLAY", "DISPLAY", NULL,
         NULL /* terminate */
 };
 
