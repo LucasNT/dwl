@@ -25,7 +25,7 @@ static const char *const autostart[] = {
         //"wbg", "/path/to/your/image", NULL,
         "eww", "open", "taskbar", NULL,
         "hypridle", NULL,
-        "dbus-update-activation-environment", "WAYLAND_DISPLAY", "DISPLAY", "XDG_SESSION_TYPE", "XDG_CURRENT_DESKTOP", NULL,
+        "dbus-update-activation-environment", "--systemd", "WAYLAND_DISPLAY", "DISPLAY", "XDG_SESSION_TYPE", "XDG_CURRENT_DESKTOP", NULL,
         NULL /* terminate */
 };
 
