@@ -10,7 +10,7 @@
         path = "${self}";
         dev-shell = true;
       };
-      packages.x86_64-linux.default = self.packages.x86_64-linux.teste-dwl;
+      packages.x86_64-linux.default = self.packages.x86_64-linux.dwl;
 
     };
 
