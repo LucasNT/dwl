@@ -26,7 +26,6 @@ static const char *const autostart[] = {
         "eww", "open", "taskbar", NULL,
         "hypridle", NULL,
         "dbus-update-activation-environment", "--systemd", "WAYLAND_DISPLAY", "DISPLAY", "XDG_SESSION_TYPE", "XDG_CURRENT_DESKTOP", NULL,
-        "xrdb", "load", "~/.Xresources", NULL,
         NULL /* terminate */
 };
 
