@@ -1,7 +1,7 @@
 # default.nix
 { stdenv, lib, path, wlroots_0_18, libinput, libxkbcommon, pkg-config, xorg
 , xwayland, wayland, wayland-protocols, wayland-scanner, pixman, libX11
-, installShellFiles, dev-shell ? false, clang }:
+, installShellFiles, git, dev-shell ? false, clang }:
 
 stdenv.mkDerivation {
   pname = "dwl-lucasnt";
@@ -10,6 +10,7 @@ stdenv.mkDerivation {
   src = path;
 
   buildInputs = [
+    git
     libinput
     libX11
     libxkbcommon
