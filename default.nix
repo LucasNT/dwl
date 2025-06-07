@@ -1,7 +1,7 @@
 # default.nix
 { stdenv, lib, path, wlroots_0_18, libinput, libxkbcommon, pkg-config, xorg
 , xwayland, wayland, wayland-protocols, wayland-scanner, pixman, libX11
-, installShellFiles, git, rose-pine-cursor, dev-shell ? false, clang }:
+, installShellFiles, git, dev-shell ? false, clang }:
 
 stdenv.mkDerivation {
   pname = "dwl-lucasnt";
@@ -23,7 +23,6 @@ stdenv.mkDerivation {
     xorg.libxcb
     xorg.xcbutilwm
     xwayland
-    rose-pine-cursor
   ] ++ lib.optionals dev-shell [ clang ];
 
   nativeBuildInputs = [ installShellFiles pkg-config wayland-scanner ];
