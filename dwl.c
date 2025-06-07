@@ -2809,7 +2809,7 @@ setup(void)
 	 * Xcursor themes to source cursor images from and makes sure that cursor
 	 * images are available at all scale factors on the screen (necessary for
 	 * HiDPI support). Scaled cursors will be loaded with each output. */
-	cursor_mgr = wlr_xcursor_manager_create("BreezeX-RoséPine", 36);
+	cursor_mgr = wlr_xcursor_manager_create(NULL, 36);
 	setenv("XCURSOR_SIZE", "36", 1);
 
 	/*
