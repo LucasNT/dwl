@@ -2810,6 +2810,7 @@ setup(void)
 	 * images are available at all scale factors on the screen (necessary for
 	 * HiDPI support). Scaled cursors will be loaded with each output. */
 	cursor_mgr = wlr_xcursor_manager_create("BreezeX-RosePine-Linux", 36);
+    setenv("XCURSOR_THEME", "BreezeX-RosePine-Linux", 1);
 	setenv("XCURSOR_SIZE", "36", 1);
 
 	/*
